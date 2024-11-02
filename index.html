@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+  <head>
+    <!-- Import das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+    <!--Define qual conjunto de caracteres utilizaremos na pagina-->
+    <meta charset="UTF-8" />
+    <!--"padroniza" a página-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevLinks</title>
+    <!--- Basicamente o "import" do css-->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+
+    <div id ="container">
+      <div id="profile">
+        <!-- Dentro do "alt" colocamos uma descrição para quem não consegue ver a imagem, para o goole por exmeplo ou outros sites-->
+        <img 
+        src="./assets/avatar-dark-mode1.png" 
+        alt="Foto de perfil do dark mode"
+        /> 
+        <p>@jmarcos3</p>
+        
+
+      </div>
+
+      <!-- Botão switch-->
+      <div id="switch" onclick="toggleMode()">
+        <button>
+        </button>
+        <span></span>
+      </div>
+
+      <!---Criando as listas, essa lista é sem numeração-->
+      <ul> 
+          <li>
+            <!--- O target serve para ele abrir uma nova página ao invés de mudar a partir dele-->
+            <a href="#" target="_blank">Veja meu portifólio</a>
+          </li>
+          <li>
+            <a href="#" target="_blank">Perfil na Rocketseat</a>
+          </li>
+          <li>
+            <a href="''" target="_blank">Repositorio desse projeto</a>
+          </li>
+      </ul>
+      </ul>
+      <div id="social-links">
+        <a href="https://github.com/jmarcos3" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+
+        <a href="https://www.linkedin.com/in/jmarcos-nogueira/" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
+      <footer> É isso :D </footer>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

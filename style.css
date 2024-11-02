@@ -1,0 +1,201 @@
+/*Essa parte é do reset universal, onde tiramos tudo que é "padrão" do navegado*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /*definindo variaveis para o css, isso é necessario na hora de criaçãod o light mode*/
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255,255,255,0.5);
+  --surface-color: rgba(255,255,255,0.1);
+  --surface-color-hover: rgba(255,255,255,0.05);
+  --highlight-color: rgba(255,255,255,0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg)
+}
+
+.light{
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0,0,0,0.5);
+  --surface-color: rgba(0,0,0,0.05);
+  --surface-color-hover: rgba(0,0,0,0.02);
+  --highlight-color: rgba(0,0,0,0.1);
+  --switch-bg-url: url(./assets/sun.svg)
+}
+
+body{
+  /* O url recebe a função do caminho e é encarregada de adicionar a imagem ao projeto */
+  
+  /*background-image: url(./assets/bg-mobile.jpg);  
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  É possivel agrupar tudo aquilo em um unico brackground */
+
+  /* background: color image repeat postion/sizer */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+/* O * do body é o seletor universal, então são coisas que são aplciadas em todo o body*/
+body *{
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container{
+  width: 360px;
+  /* Centralizando o container 
+  OBS: A margem pode ser descrito com argumentos de 1 a 4 e dependendo a posição a que os numeros 
+  estão se refirindo muda, tem que dar uma olhada na documentação. */
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile{
+  text-align: center;
+  padding: 24px;
+}
+
+
+#profile img{
+  width: 112px;
+  /* Sobre o alinhamento de imagem ao centro
+  Existem elementos no css que são por padrão display "inline" e o img é um deles por exemplo.
+  Para isso preciamos mudar ele para block e depois definir a margin para padronizar:display: 
+    display: block;
+    margin: auto;  
+  Um outro jeito de fazer isso é definindo o pai dele com o text-align center*/
+
+}
+
+#profile p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  
+  padding: 8px;
+}
+/*switch*/
+
+#switch{
+  /*Centralizando display block*/
+  margin: 4px auto;
+
+  /*Ele "relativiza" o absoluto dentro dessa div*/
+  position: relative;
+
+  /* Alinhando no contexto de posicionamento absoluto*/
+  width: 64px;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0px;
+  border-radius: 50%;
+
+  /*Sobrendo elementos, e esse position aboslute é bem poderoso, ele meio que adiciona uma cadama a pagina*/
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  /*Alinhando verticalmente*/
+  top: 50%;
+  transform: translateY(-50%);
+}
+g
+
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+#switch span{
+  /*O span por padrão é display inline, então ele não aceita coisas como largura, por isso trasnformamos ele em block*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+
+/* Links */
+
+ul {
+  list-style: none;  /* remove os pontinhos */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px;
+}
+
+ul li a{
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+
+  backdrop-filter: blur(4px);
+  /*Esse webkit é usado para manter a compatibilidade para todos os browsers*/
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  /*Garante suavidade na transição do hover*/
+  transition: background 0.2s;
+}
+
+/* pseudo-selector */
+ul li a:hover{
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+
+}
+
+/* social links */
+#social-links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+}
+
+#social-links ion-icon{
+  width: 24px;
+  height: 24px;
+}
+
+/*centralizando meu link botãozinho */
+#social-links a{
+  display:  flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%; /*faz um circulo perfeito*/
+}
+
+#social-links a:hover{
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
