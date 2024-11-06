@@ -38,6 +38,7 @@ body{
 
   /* background: color image repeat postion/sizer */
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 /* O * do body é o seletor universal, então são coisas que são aplciadas em todo o body*/
@@ -47,7 +48,8 @@ body *{
 }
 
 #container{
-  width: 360px;
+  width: 100%; /* Colocando para ele sempre preencher tudo, só que precisamos definir uma max width */
+  max-width: 588px; /* Largura do desktop */
   /* Centralizando o container 
   OBS: A margem pode ser descrito com argumentos de 1 a 4 e dependendo a posição a que os numeros 
   estão se refirindo muda, tem que dar uma olhada na documentação. */
@@ -198,4 +200,16 @@ footer {
   padding: 12px;
   text-align: center;
   font-size: 14px;
+}
+
+/* Media Queries -> é uma atrule, basicamente um if */
+
+@media (min-width: 700px){
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
