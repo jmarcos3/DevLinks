@@ -108,13 +108,19 @@ body *{
   /*Alinhando verticalmente*/
   top: 50%;
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
 }
-g
 
 .light #switch button{
-  right: 0;
-  left: initial;
+  /*animation: nomeAnimação tempo forwards significa pra ele manter as alterações*/
+  animation: slide-in 0.2s forwards;
 }
+
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
+}
+
 #switch span{
   /*O span por padrão é display inline, então ele não aceita coisas como largura, por isso trasnformamos ele em block*/
   display: block;
@@ -126,6 +132,7 @@ g
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
+
 
 
 /* Links */
@@ -211,5 +218,25 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animações, para animações utilizamos um atrule diferente */
+
+@keyframes slide-in{
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
