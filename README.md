@@ -1,6 +1,8 @@
 # DevLinks
 
 DevLinks é um projeto de página de links personalizada, onde você pode compartilhar os principais links para o seu portfólio, redes sociais, projetos e outras plataformas. Este projeto foi desenvolvido utilizando HTML, CSS e JavaScript.
+![Projeto](.github/preview.png)
+Link: https://jmarcos3.github.io/DevLinks/
 
 ## Tecnologias Utilizadas
 
